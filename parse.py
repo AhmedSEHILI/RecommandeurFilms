@@ -1,4 +1,7 @@
 import csv
+import os
+import random
+os.system('cat projetMRC2024_squelette.rdf')
 try :
     file = open("ml-100k/u1.base")
 except :
@@ -13,8 +16,9 @@ liste_genres = ["unknown" , "Action" , "Adventure" , "Animation" ,
               "Thriller" ,"War" , "Western" ]
 mois_num = { 'Jan' : '01', 'Feb' : '02', 'Mar' : '03', 'Apr' : '04' , 'May' : '05',
     'Jun' : '06', 'Jul' : '07','Aug' : '08', 'Sep' : '09' ,'Oct' : '10', 'Nov' :'11', 'Dec' :'12'
-}              
-for line in ll[:500] :
+}       
+liste_ratings = random.choices(ll,k=500)       
+for line in liste_ratings :
     print('\t<owl:NamedIndividual rdf:about="{nom_onto}#Rating{id}">\
         \n\t\t<rdf:type rdf:resource="{nom_onto}#Rating"/>\
         \n\t\t<r:film rdf:resource="{nom_onto}#Film{id_film}"/>\
