@@ -16,7 +16,10 @@ liste_genres = ["unknown" , "Action" , "Adventure" , "Animation" ,
               "Thriller" ,"War" , "Western" ]
 mois_num = { 'Jan' : 1, 'Feb' : 2, 'Mar' : 3, 'Apr' : 4 , 'May' : 5,
     'Jun' : 6, 'Jul' : 7,'Aug' : 8, 'Sep' : 9 ,'Oct' : 10, 'Nov' : 11, 'Dec' :12
-}       
+}
+mois_num_date = { 'Jan' : '01', 'Feb' : '02', 'Mar' : '03', 'Apr' : '04' , 'May' : '05',
+    'Jun' : '06', 'Jul' : '07','Aug' : '08', 'Sep' : '09' ,'Oct' : '10', 'Nov' :'11', 'Dec' :'12'
+}        
 liste_ratings = random.choices(ll,k=200)       
 for line in liste_ratings :
     print('\t<owl:NamedIndividual rdf:about="{nom_onto}#Rating{id}">\
@@ -67,14 +70,17 @@ for line in ll :
         
     if len(line[2]) != 0:
         dateS = line[2].split('-')
+        num_mois = mois_num[dateS[1]]
+        dateS[1] = mois_num_date[dateS[1]]
         print('\t<owl:NamedIndividual rdf:about="{nom_onto}#Film{id_film}">\
         \n\t\t<rdf:type rdf:resource="{nom_onto}#Film"/>'.format(nom_onto = url_onto,id_film = line[0])+genres+
         '\n\t\t<mv:anneeSortie rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">{anneeSortie}</mv:anneeSortie>\
         \n\t\t<mv:jourSortie rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">{jourSortie}</mv:jourSortie>\
         \n\t\t<mv:moisSortie rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">{moisSortie}</mv:moisSortie>\
+        \n\t\t<mv:dateSortie>{dateSortie}</mv:dateSortie>\
         \n\t\t<mv:imdbURL>{url_film}</mv:imdbURL>\
         \n\t\t<mv:title>{titre}</mv:title>\
-        \n\t</owl:NamedIndividual>'.format(titre = line[1].replace('&','&amp;'), url_film = line[4].replace('&','&amp;'),anneeSortie = int(dateS[2]),moisSortie=mois_num[dateS[1]],jourSortie=int(dateS[0])))
+        \n\t</owl:NamedIndividual>'.format(titre = line[1].replace('&','&amp;'), url_film = line[4].replace('&','&amp;'),anneeSortie = int(dateS[2]),moisSortie=num_mois,jourSortie=int(dateS[0]),dateSortie=['','-'.join(dateS[::-1])][len(line[2]) != 0]))
 
     else :    
         print('\t<owl:NamedIndividual rdf:about="{nom_onto}#Film{id_film}">\

@@ -102,6 +102,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#mv:dateSortie -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#mv:dateSortie">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#Rating"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#mv:imdbURL -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#mv:imdbURL">
@@ -224,63 +234,6 @@
     <!-- http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#User -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#User"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#FilmTest -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#FilmTest">
-        <rdf:type rdf:resource="http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#Film"/>
-        <mv:genre rdf:resource="http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#GenreTest"/>
-        <mv:anneeSortie rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2015</mv:anneeSortie>
-        <mv:imdbURL>http://a</mv:imdbURL>
-        <mv:jourSortie rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</mv:jourSortie>
-        <mv:moisSortie rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</mv:moisSortie>
-        <mv:title>TG</mv:title>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#GenreTest -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#GenreTest">
-        <rdf:type rdf:resource="http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#Genre"/>
-        <genre:name>FTG</genre:name>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#RatingTest -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#RatingTest">
-        <rdf:type rdf:resource="http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#Rating"/>
-        <r:film rdf:resource="http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#FilmTest"/>
-        <r:user rdf:resource="http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#UserTest"/>
-        <r:note rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</r:note>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#UserTest -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#UserTest">
-        <rdf:type rdf:resource="http://www.semanticweb.org/daniii93430/ontologies/2024/11/ProjetMRC2024#User"/>
-        <usr:age rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21</usr:age>
-        <usr:occupation>chomeur</usr:occupation>
-        <usr:sexe>M</usr:sexe>
-        <usr:zipCode>00001</usr:zipCode>
-    </owl:NamedIndividual>
     
 
 
